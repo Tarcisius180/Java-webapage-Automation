@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TakealotTestSuite">
+    <test name="LoginRequiredTests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="login_required"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test_classes.AddAddressTest">
+                <methods>
+                    <include name="testAddNewAddress"/>
+                    <include name="testEmptyAddressForm"/>
+                </methods>
+            </class>
+            <class name="test_classes.PersonalDetailsTest">
+                <methods>
+                    <include name="testUpdatePersonalDetails"/>
+                    <include name="testEmptyNameFields"/>
+                </methods>
+            </class>
+            <class name="test_classes.BusinessDetails_Test">
+                <methods>
+                    <include name="testBusinessDetails"/>
+                    <include name="testRemoveBusinessDetails"/>
+                    <include name="testSaveEmptyBusinessDetails"/>
+                </methods>
+            </class>
+            <class name="test_classes.MyListTest">
+                <methods>
+                    <include name="testEmptyMyList"/>
+                    <include name="testCreateNewList"/>
+                    <include name="testRenameList"/>
+                    <include name="testDeleteList"/>
+                </methods>
+            </class>
+            <class name="test_classes.NewsLetterSubscriptionTest">
+                <methods>
+                    <include name="testLetterSubscription"/>
+                    <include name="testremoveLetterSubscription"/>
+                </methods>
+            </class>
+            <class name="test_classes.PromoCodeTest">
+                <methods>
+                    <include name="testApplyPromoCode"/>
+                </methods>
+            </class>
+            <class name="test_classes.LogoutTest">
+                <methods>
+                    <include name="testUserLoggedOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="NoLoginRequiredTests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="no_login_required"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test_classes.LoginTest">
+                <methods>
+                    <include name="testUserLogin"/>
+                    <include name="testInvalidLogin"/>
+                </methods>
+            </class>
+            <class name="test_classes.SearchAProductTest">
+                <methods>
+                    <include name="testSearchAndKeepResults"/>
+                    <include name="testSearchAndAddToCart"/>
+                </methods>
+            </class>
+            <class name="test_classes.NavigateToRedWineTest">
+                <methods>
+                    <include name="testNavigateToRedWine"/>
+                </methods>
+            </class>
+            <class name="test_classes.EmptyCartTest">
+                <methods>
+                    <include name="testEmptyCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
